@@ -1,5 +1,6 @@
 package com.Love.ToCode;
 
+
 public class Bark {
 
     private String sound;
@@ -12,12 +13,15 @@ public class Bark {
         return sound;
     }
 
-    public boolean equals(Object bark){
-        if (bark instanceof Bark){
-            Bark otherBack = (Bark) bark;
-            if (this.sound.equalsIgnoreCase(otherBack.sound)){
-                return true;
-            }
+    public void setSound(String sound) {
+        this.sound = sound;
+    }
+
+    public boolean equals(String bark){
+
+
+        if (bark.equalsIgnoreCase(getSound())){
+          return true;
         }
 
         return false;

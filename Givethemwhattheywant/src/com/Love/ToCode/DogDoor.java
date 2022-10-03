@@ -1,17 +1,20 @@
 package com.Love.ToCode;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class DogDoor {
     private boolean open;
-    private Bark allowBark;
+    private List<Bark> allowBarks;
 
 
 
 
     public DogDoor() {
         this.open = false;
+        allowBarks = new ArrayList<>();
     }
 
     public void open() {
@@ -21,7 +24,7 @@ public class DogDoor {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                System.out.println("inside run()");
+
                close();
                 timer.cancel();
             }
@@ -38,12 +41,14 @@ public class DogDoor {
         return open;
     }
 
-    public Bark getAllowBark() {
-        return allowBark;
+
+
+    public List<Bark> getAllowBarks() {
+        return allowBarks;
     }
 
-    public void setAllowBark(Bark allowBark) {
-        this.allowBark = allowBark;
+    public void addAllowBarks(Bark allowBarks) {
+        this.allowBarks.add(allowBarks);
     }
 }
 
